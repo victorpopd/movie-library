@@ -1,6 +1,5 @@
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-import Genre from "../Main Pages/Genre/Genre";
 
 function NavBar() {
   return (
@@ -10,7 +9,7 @@ function NavBar() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/genre">Genre</Link>
+          <Link to="/popular">Popular</Link>
         </li>
         <li>
           <Link to="/movies">Movies</Link>

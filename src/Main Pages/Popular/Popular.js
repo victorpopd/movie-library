@@ -1,33 +1,31 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import axios from "axios";
-import "./Home.css";
+import "./Popular.css";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Home() {
-  const [homeMovies, sethomeMovies] = useState([]);
+function Popular() {
+  const [popularMovies, setPopularMovies] = useState([]);
 
   useEffect(() => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/top_rated?api_key=388d899bacdfb56d15ed5ef6cac36a37&language=en-US&page=1`
+        `https://api.themoviedb.org/3/movie/popular?api_key=388d899bacdfb56d15ed5ef6cac36a37&language=en-US&page=1`
       )
       .then((response) => {
         if (response.data && response.data.results)
-          sethomeMovies(response.data.results);
+          setPopularMovies(response.data.results);
       })
       .catch((err) => {
         console.error(err);
       });
   }, []);
 
-  // console.log("----> ", homeMovies);
-
-  if (homeMovies.length) {
+  if (popularMovies) {
     return (
       <div className="grid-container">
-        {homeMovies.slice(0, 20).map((movie) => (
-          <Link key={movie.id} to={`${movie.id}`}>
+        {popularMovies.slice(0, 16).map((movie) => (
+          <Link key={movie.id} to={`/${movie.id}`}>
             <div className="grid-item">
               <img
                 src={`http://image.tmdb.org/t/p/w500/${movie.poster_path}`}
@@ -40,4 +38,5 @@ function Home() {
     );
   }
 }
-export default Home;
+
+export default Popular;
