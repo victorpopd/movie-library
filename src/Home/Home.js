@@ -2,7 +2,7 @@ import React from "react";
 import HeaderLogo from "./HeaderLogo/HeaderLogo";
 import NavBar from "./NavBar/NavBar";
 
-function App() {
+function Home() {
   return (
     <div>
       <HeaderLogo />
@@ -11,4 +11,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

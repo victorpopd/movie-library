@@ -1,6 +1,6 @@
 import "./NavBar.css";
 import { Link } from "react-router-dom";
-import Genre from "../Genre/Genre";
+import Genre from "../../Genre/Genre";
 
 function NavBar() {
   return (
