@@ -16,9 +16,9 @@ function MoviePage() {
       )
       .then(function (response) {
         // console.log(response);
-        // if (response.data) {
+        if (response.data) {
         setmoviePage(response.data);
-        // }
+        }
       })
       .catch((err) => {
         console.error(err);
